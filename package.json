@@ -1,0 +1,26 @@
+{
+  "name": "chat",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/electron-entry.js",
+  "scripts": {
+    "start": "gulp watch",
+    "postinstall": "node scripts/links.js"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^0.30.4",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.0",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-newer": "^0.5.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-react": "^3.0.1",
+    "gulp-run-electron": "^1.2.1",
+    "gulp-util": "^3.0.6"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "react": "^0.13.3"
+  }
+}
