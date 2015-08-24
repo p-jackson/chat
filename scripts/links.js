@@ -3,11 +3,6 @@
 var fs = require('fs');
 var path = require('path');
 
-function check(a) {
-   if (!a)
-      throw new Error('what the!');
-}
-
 function makeDir(dirPath) {
    return new Promise(function(resolve, reject) {
       fs.mkdir(path.join(__dirname, dirPath), function(e) {

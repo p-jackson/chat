@@ -5,6 +5,7 @@
   "main": "src/electron-entry.js",
   "scripts": {
     "start": "gulp watch",
+    "preinstall": "node scripts/unlinks.js",
     "postinstall": "node scripts/links.js"
   },
   "devDependencies": {
