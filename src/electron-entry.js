@@ -13,18 +13,18 @@ crashReporter.start();
 let allWindows = new Set();
 
 app.on('window-all-closed', () => {
-   if (process.platform !== 'darwin')
-      app.quit();
+  if (process.platform !== 'darwin')
+    app.quit();
 });
 
 app.on('ready', () => {
-   let newWindow = new BrowserWindow({
-      width: 800,
-      height: 600,
-      frame: false
-   });
-   newWindow.loadUrl(`file://${__dirname}/frame.html`);
+  let newWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    frame: false
+  });
+  newWindow.loadUrl(`file://${__dirname}/frame.html`);
 
-   allWindows.add(newWindow);
-   newWindow.on('closed', () => allWindows.delete(newWindow));
+  allWindows.add(newWindow);
+  newWindow.on('closed', () => allWindows.delete(newWindow));
 });

@@ -8,27 +8,27 @@ var fs = require('fs');
 var path = require('path');
 
 function unlink(linkPath) {
-   return new Promise(function(resolve, reject) {
-      function callback(e) {
-         if (e && e.code !== 'ENOENT')
-            reject(e);
-         else
-            resolve();
-      }
+  return new Promise(function(resolve, reject) {
+    function callback(e) {
+      if (e && e.code !== 'ENOENT')
+        reject(e);
+      else
+        resolve();
+    }
 
-      fs.unlink(path.join(__dirname, linkPath), callback);
-   });
+    fs.unlink(path.join(__dirname, linkPath), callback);
+  });
 }
 
 function removeNodeModuleLink(moduleName) {
-   var j = path.join;
-   return unlink(path.join('../node_modules', moduleName))
-      .then(unlink(path.join('../build/node_modules', moduleName)));
+  var j = path.join;
+  return unlink(path.join('../node_modules', moduleName))
+    .then(unlink(path.join('../build/node_modules', moduleName)));
 }
 
 removeNodeModuleLink('root')
-   .then(removeNodeModuleLink('components'))
-   .then(removeNodeModuleLink('component-mixins'))
-   .catch(function(e) {
-      console.error(e);
-   });
+  .then(removeNodeModuleLink('components'))
+  .then(removeNodeModuleLink('component-mixins'))
+  .catch(function(e) {
+    console.error(e);
+  });
