@@ -42,7 +42,9 @@ makeDir('../build')
    .then(makeDir('../build/node_modules'))
    .then(makeDir('../build/src'))
    .then(makeDir('../build/src/components'))
+   .then(makeDir('../build/src/component-mixins'))
    .then(makeNodeModuleLink('src/components', 'components'))
+   .then(makeNodeModuleLink('src/component-mixins', 'component-mixins'))
    .then(makeNodeModuleLink('.', 'root'))
    .catch(function(e) {
       console.error(e);

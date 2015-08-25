@@ -28,6 +28,7 @@ function removeNodeModuleLink(moduleName) {
 
 removeNodeModuleLink('root')
    .then(removeNodeModuleLink('components'))
+   .then(removeNodeModuleLink('component-mixins'))
    .catch(function(e) {
       console.error(e);
    });
