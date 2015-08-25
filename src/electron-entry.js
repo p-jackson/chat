@@ -19,8 +19,8 @@ app.on('window-all-closed', () => {
 
 app.on('ready', () => {
   let newWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 600,
+    height: 500,
     frame: false
   });
   newWindow.loadUrl(`file://${__dirname}/frame.html`);
