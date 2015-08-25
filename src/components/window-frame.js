@@ -18,12 +18,14 @@ const styles = {
     flexBasis: 250
   },
   rhs: {
-    flexGrow: 1
+    flexGrow: 1,
+    WebkitAppRegion: 'drag'
   },
   frameControls: {
     position: 'fixed',
     top: 0,
-    right: 0
+    right: 0,
+    WebkitAppRegion: 'no-drag'
   },
   version: {
     position: 'fixed',
@@ -36,10 +38,10 @@ class WindowFrame extends React.Component {
   render() {
     return (
       <div style={styles.self}>
-        <WindowFrameControls style={styles.frameControls} />
         <ContactList style={styles.contactList} />
         <div style={styles.rhs}></div>
         <ChatVersionBadge style={styles.version} />
+        <WindowFrameControls style={styles.frameControls} />
       </div>
     );
   }
