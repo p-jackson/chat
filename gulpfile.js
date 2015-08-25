@@ -5,7 +5,7 @@ var packageJson = require('./package.json');
 var dependencies = Object.keys(packageJson.dependencies);
 
 var jsFiles = 'src/**/*.{js,jsx}';
-var otherFiles = [ 'src/**/*.{html,ico,png,jpg,jpeg}', 'package.json' ];
+var otherFiles = [ 'src/**/*.{ico,png,jpg,jpeg,css,eot,svg,ttf,woff}', 'package.json', 'src/frame.html' ];
 var moduleFiles = dependencies.map(function(module) { return 'node_modules/' + module + '/**/*' });
 var buildDir = 'build/';
 
