@@ -13,7 +13,7 @@ gulp.task('babel', function() {
   return gulp.src(jsFiles, { base: '.' })
     .pipe($.plumber())
     .pipe($.newer(buildDir))
-    .pipe($.babel())
+    .pipe($.babel({ stage: 1 }))
     .pipe($.react())
     .pipe(gulp.dest(buildDir));
 });

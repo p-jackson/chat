@@ -1,48 +1,43 @@
 import React from 'react';
-import { extend } from 'lodash';
+import Radium from 'radium'
 import HoverMixin from 'component-mixins/hover-mixin';
 
-const baseStyle = {
-  border: 'none',
-  background: 'transparent',
-  minHeight: 30,
-  minWidth: 30,
-  outline: 'none',
-  transition: '200ms'
-};
-
-const baseHoverStyle = {
-  transition: 'none',
-  background: 'rgba(0, 0, 0, 0.1)'
+const styles = {
+  base: {
+    border: 'none',
+    background: 'transparent',
+    minHeight: 30,
+    minWidth: 30,
+    outline: 'none',
+    transition: '200ms',
+    ':hover': {
+      transition: 'none',
+      background: 'rgba(0, 0, 0, 0.1)'
+    },
+    ':active': {
+      background: 'rgba(0, 0, 0, 0.2)'
+    }
+  }
 }
 
-export default React.createClass({
-  mixins: [HoverMixin],
-
+@Radium
+export default class Button extends React.Component {
   render() {
-    let { style, hoverStyle, ...other } = this.props;
+    let { style, ...other } = this.props;
 
-    const finalStyle = extend({},
-      baseStyle,
-      this.style(),
-      style,
-      this.state.hovered && baseHoverStyle,
-      this.state.hovered && this.hoverStyle(),
-      this.state.hovered && hoverStyle
-    );
+    const finalStyle = [
+      styles.base,
+      this.style()
+    ].concat(style);
 
     return (
-      <button {...other} style={finalStyle}>
+      <button className="gray-hover-button" {...other} style={finalStyle}>
         {this.props.children}
       </button>
     );
-  },
+  }
 
-  style: function() {
-    return {};
-  },
-
-  hoverStyle: function() {
+  style() {
     return {};
   }
-});
+};

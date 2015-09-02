@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'tiny-typicons';
-  src: url('../font/tiny-typicons.eot?5425136');
-  src: url('../font/tiny-typicons.eot?5425136#iefix') format('embedded-opentype'),
-       url('../font/tiny-typicons.woff?5425136') format('woff'),
-       url('../font/tiny-typicons.ttf?5425136') format('truetype'),
-       url('../font/tiny-typicons.svg?5425136#tiny-typicons') format('svg');
+  src: url('../font/tiny-typicons.eot?66829328');
+  src: url('../font/tiny-typicons.eot?66829328#iefix') format('embedded-opentype'),
+       url('../font/tiny-typicons.woff?66829328') format('woff'),
+       url('../font/tiny-typicons.ttf?66829328') format('truetype'),
+       url('../font/tiny-typicons.svg?66829328#tiny-typicons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'tiny-typicons';
-    src: url('../font/tiny-typicons.svg?5425136#tiny-typicons') format('svg');
+    src: url('../font/tiny-typicons.svg?66829328#tiny-typicons') format('svg');
   }
 }
 */
@@ -56,3 +56,4 @@
  
 .icon-cancel:before { content: '\e800'; } /* '' */
 .icon-minus:before { content: '\e801'; } /* '' */
+.icon-cog:before { content: '\e802'; } /* '' */

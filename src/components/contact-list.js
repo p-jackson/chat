@@ -1,5 +1,6 @@
 import React from 'react'
-import { extend } from 'lodash'
+import Radium from 'radium'
+import AppDragMixin from 'component-mixins/app-drag-mixin'
 
 const styles = {
   base: {
@@ -8,9 +9,10 @@ const styles = {
   }
 }
 
-export default class ContactList {
+@AppDragMixin
+@Radium
+export default class ContactList extends React.Component {
   render() {
-    let s = extend({}, this.props.style, styles.base)
-    return <div style={s}></div>
+    return <div style={[styles.base, this.props.style]}></div>
   }
 }

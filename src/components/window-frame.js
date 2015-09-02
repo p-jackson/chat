@@ -2,6 +2,7 @@ import React from 'react';
 import WindowFrameControls from 'components/window-frame-controls';
 import ContactList from 'components/contact-list';
 import ChatVersionBadge from 'components/chat-version-badge';
+import remote from 'remote'
 
 const styles = {
   self: {
@@ -18,14 +19,12 @@ const styles = {
     flexBasis: 250
   },
   rhs: {
-    flexGrow: 1,
-    WebkitAppRegion: 'drag'
+    flexGrow: 1
   },
   frameControls: {
     position: 'fixed',
     top: 0,
-    right: 0,
-    WebkitAppRegion: 'no-drag'
+    right: 0
   },
   version: {
     position: 'fixed',
@@ -34,17 +33,15 @@ const styles = {
   }
 }
 
-class WindowFrame extends React.Component {
+export default class WindowFrame extends React.Component {
   render() {
     return (
       <div style={styles.self}>
         <ContactList style={styles.contactList} />
-        <div style={styles.rhs}></div>
+        <div style={styles.rhs} />
         <ChatVersionBadge style={styles.version} />
         <WindowFrameControls style={styles.frameControls} />
       </div>
     );
   }
 }
-
-export default WindowFrame;

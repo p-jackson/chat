@@ -21,7 +21,8 @@
     "gulp-util": "^3.0.6"
   },
   "dependencies": {
-    "lodash": "^3.10.1",
+    "electron-drag": "^1.0.0",
+    "radium": "^0.13.8",
     "react": "^0.13.3"
   }
 }
