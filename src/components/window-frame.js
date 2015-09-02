@@ -1,6 +1,7 @@
 import React from 'react';
 import WindowFrameControls from 'components/window-frame-controls';
 import ContactList from 'components/contact-list';
+import ChatContainer from 'components/chat-container';
 import ChatVersionBadge from 'components/chat-version-badge';
 import remote from 'remote'
 
@@ -38,7 +39,7 @@ export default class WindowFrame extends React.Component {
     return (
       <div style={styles.self}>
         <ContactList style={styles.contactList} />
-        <div style={styles.rhs} />
+        <ChatContainer style={styles.rhs} />
         <ChatVersionBadge style={styles.version} />
         <WindowFrameControls style={styles.frameControls} />
       </div>
