@@ -1,16 +1,21 @@
 import app from 'app';
-import BrowserWindow from 'browser-window';
 import crashReporter from 'crash-reporter';
 import Menu from 'menu';
+import ipc from 'ipc'
 
 import appMenu from './app-menu';
+import ChatFrame from './chat-frame/chat-frame'
+import SettingsFrame from './settings-frame/settings-frame'
 
 crashReporter.start();
 
 //Menu.setApplicationMenu(appMenu);
 
 // Need to keep a reference to all windows so the GC doesn't clean them up.
-let allWindows = new Set();
+let allChatFrams = new Set();
+
+// Keep a reference to the settings dialog, because we only ever want one.
+let settingsFrame = null;
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin')
@@ -18,13 +23,17 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', () => {
-  let newWindow = new BrowserWindow({
-    width: 600,
-    height: 500,
-    frame: false
-  });
-  newWindow.loadUrl(`file://${__dirname}/frame.html`);
-
-  allWindows.add(newWindow);
-  newWindow.on('closed', () => allWindows.delete(newWindow));
+  let chatFrame = new ChatFrame();
+  allChatFrams.add(chatFrame);
+  chatFrame.on('closed', () => allChatFrams.delete(chatFrame));
 });
+
+ipc.on('show-settings', () => {
+  if (settingsFrame) {
+    settingsFrame.bringToFront();
+    return;
+  }
+
+  settingsFrame = new SettingsFrame();
+  settingsFrame.on('closed', () => settingsFrame = null);
+})
