@@ -1,6 +1,5 @@
 import React from 'react';
 import Radium from 'radium'
-import HoverMixin from 'component-mixins/hover-mixin';
 
 const styles = {
   base: {

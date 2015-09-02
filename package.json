@@ -6,10 +6,11 @@
   "scripts": {
     "start": "gulp watch",
     "preinstall": "node scripts/unlinks.js",
-    "postinstall": "node scripts/links.js"
+    "postinstall": "electron-rebuild && node scripts/links.js"
   },
   "devDependencies": {
     "electron-prebuilt": "^0.30.4",
+    "electron-rebuild": "^0.2.5",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.0",
     "gulp-load-plugins": "^1.0.0-rc.1",

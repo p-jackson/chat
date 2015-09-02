@@ -42,9 +42,9 @@ makeDir('../build')
   .then(makeDir('../build/node_modules'))
   .then(makeDir('../build/src'))
   .then(makeDir('../build/src/components'))
-  .then(makeDir('../build/src/component-mixins'))
+  .then(makeDir('../build/src/higher-order-components'))
   .then(makeNodeModuleLink('src/components', 'components'))
-  .then(makeNodeModuleLink('src/component-mixins', 'component-mixins'))
+  .then(makeNodeModuleLink('src/higher-order-components', 'higher-order-components'))
   .then(makeNodeModuleLink('.', 'root'))
   .catch(function(e) {
     console.error(e);

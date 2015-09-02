@@ -1,6 +1,6 @@
 import React from 'react'
 import Radium from 'radium'
-import AppDragMixin from 'component-mixins/app-drag-mixin'
+import AppDrag from 'higher-order-components/app-drag'
 
 const styles = {
   base: {
@@ -9,7 +9,7 @@ const styles = {
   }
 }
 
-@AppDragMixin
+@AppDrag
 @Radium
 export default class ContactList extends React.Component {
   render() {
