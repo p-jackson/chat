@@ -17,4 +17,8 @@ export default class {
   bringToFront() {
     this.window.show()
   }
+
+  close() {
+    this.window.close()
+  }
 }

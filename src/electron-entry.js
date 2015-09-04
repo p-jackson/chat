@@ -25,7 +25,11 @@ app.on('window-all-closed', () => {
 app.on('ready', () => {
   let chatFrame = new ChatFrame()
   allChatFrames.add(chatFrame)
-  chatFrame.on('closed', () => allChatFrames.delete(chatFrame))
+  chatFrame.on('closed', () => {
+    allChatFrames.delete(chatFrame)
+    if (!allChatFrames.length && settingsFrame && process.platform !== 'darwin')
+      settingsFrame.close()
+  })
 })
 
 ipc.on('show-settings', () => {
