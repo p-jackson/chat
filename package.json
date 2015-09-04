@@ -4,7 +4,8 @@
   "private": true,
   "main": "src/electron-entry.js",
   "scripts": {
-    "start": "gulp watch",
+    "start": "gulp electron",
+    "watch": "gulp watch",
     "preinstall": "node scripts/unlinks.js",
     "postinstall": "electron-rebuild && node scripts/links.js"
   },
