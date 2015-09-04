@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp electron",
     "watch": "gulp watch",
-    "lint": "eslint gulpfile.js src scripts",
+    "lint": "gulp lint",
     "preinstall": "node scripts/unlinks.js",
     "postinstall": "electron-rebuild && node scripts/links.js"
   },
@@ -17,6 +17,7 @@
     "eslint": "^1.3.1",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.0",
+    "gulp-eslint": "^1.0.0",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-newer": "^0.5.1",
     "gulp-notify": "^2.2.0",

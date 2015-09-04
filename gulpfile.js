@@ -14,6 +14,8 @@ gulp.task('babel', function() {
   return gulp.src(jsFiles, { base: '.' })
     .pipe($.plumber())
     .pipe($.newer(buildDir))
+    .pipe($.eslint())
+    .pipe($.eslint.format())
     .pipe($.babel({ stage: 1 }))
     .pipe($.react())
     .pipe(gulp.dest(buildDir))
@@ -35,6 +37,15 @@ gulp.task('copy-modules', function() {
   return gulp.src(moduleFiles, { base: '.' })
     .pipe($.newer(buildDir))
     .pipe(gulp.dest(buildDir))
+})
+
+gulp.task('lint', function() {
+  var files = [ jsFiles, 'scripts/**/*.js', 'gulpfile.js' ]
+
+  return gulp.src(files)
+    .pipe($.eslint())
+    .pipe($.eslint.format())
+    .pipe($.eslint.failOnError())
 })
 
 gulp.task('build', ['babel', 'copy-dev', 'copy-modules'])
