@@ -6,12 +6,15 @@
   "scripts": {
     "start": "gulp electron",
     "watch": "gulp watch",
+    "lint": "eslint gulpfile.js src scripts",
     "preinstall": "node scripts/unlinks.js",
     "postinstall": "electron-rebuild && node scripts/links.js"
   },
   "devDependencies": {
+    "babel-eslint": "^4.1.1",
     "electron-prebuilt": "^0.30.4",
     "electron-rebuild": "^0.2.5",
+    "eslint": "^1.3.1",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.0",
     "gulp-load-plugins": "^1.0.0-rc.1",
@@ -26,5 +29,22 @@
     "electron-drag": "^1.0.0",
     "radium": "^0.13.8",
     "react": "^0.13.3"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "rules": {
+      "semi": [1, "never"],
+      "no-trailing-spaces": [1, { "skipBlankLines": false }],
+      "indent": [1, 2],
+      "linebreak-style": [1, "unix"],
+      "max-len": [1, 80, 2]
+    }
   }
 }

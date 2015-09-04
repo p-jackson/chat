@@ -1,4 +1,4 @@
-import React from 'react';
-import WindowFrame from 'components/window-frame';
+import React from 'react'
+import WindowFrame from 'components/window-frame'
 
-React.render(<WindowFrame />, document.getElementById('frame-entry'));
+React.render(<WindowFrame />, document.getElementById('frame-entry'))

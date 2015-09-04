@@ -1,4 +1,5 @@
-import Menu from 'menu';
+import Menu from 'menu'
+import remote from 'remote'
 
 var template = [
   {
@@ -86,12 +87,12 @@ var template = [
       {
         label: 'Reload',
         accelerator: 'Command+R',
-        click: function() { remote.getCurrentWindow().reload(); }
+        click: function() { remote.getCurrentWindow().reload() }
       },
       {
         label: 'Toggle DevTools',
         accelerator: 'Alt+Command+I',
-        click: function() { remote.getCurrentWindow().toggleDevTools(); }
+        click: function() { remote.getCurrentWindow().toggleDevTools() }
       },
     ]
   },
@@ -121,6 +122,6 @@ var template = [
     label: 'Help',
     submenu: []
   }
-];
+]
 
-export default Menu.buildFromTemplate(template);
+export default Menu.buildFromTemplate(template)

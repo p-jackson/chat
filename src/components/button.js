@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Radium from 'radium'
 
 const styles = {
@@ -22,21 +22,21 @@ const styles = {
 @Radium
 export default class Button extends React.Component {
   render() {
-    let { style, ...other } = this.props;
+    let { style, ...other } = this.props
 
     const finalStyle = [
       styles.base,
       this.style()
-    ].concat(style);
+    ].concat(style)
 
     return (
       <button className="gray-hover-button" {...other} style={finalStyle}>
         {this.props.children}
       </button>
-    );
+    )
   }
 
   style() {
-    return {};
+    return {}
   }
-};
+}

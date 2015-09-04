@@ -1,3 +1,3 @@
-import React from 'react';
+import React from 'react'
 
-React.render(<div />, document.getElementById('frame-entry'));
+React.render(<div />, document.getElementById('frame-entry'))

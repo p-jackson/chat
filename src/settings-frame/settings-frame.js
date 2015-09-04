@@ -1,13 +1,13 @@
-import BrowserWindow from 'browser-window';
+import BrowserWindow from 'browser-window'
 
 export default class {
   constructor(options = {}) {
-    options.width = options.width || 400;
-    options.height = options.height || 300;
+    options.width = options.width || 400
+    options.height = options.height || 300
 
-    this.window = new BrowserWindow(options);
-    this.window.setMenuBarVisibility(false);
-    this.window.loadUrl(`file://${__dirname}/settings-frame.html`);
+    this.window = new BrowserWindow(options)
+    this.window.setMenuBarVisibility(false)
+    this.window.loadUrl(`file://${__dirname}/settings-frame.html`)
   }
 
   on() {
@@ -15,6 +15,6 @@ export default class {
   }
 
   bringToFront() {
-    this.window.show();
+    this.window.show()
   }
 }

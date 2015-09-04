@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-const packageJson = require('root/package.json');
+const packageJson = require('root/package.json')
 
 export default class ChatVersionBadge {
   render() {

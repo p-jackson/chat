@@ -1,8 +1,8 @@
-import React from 'react';
-import WindowFrameControls from 'components/window-frame-controls';
-import ContactList from 'components/contact-list';
-import ChatContainer from 'components/chat-container';
-import ChatVersionBadge from 'components/chat-version-badge';
+import React from 'react'
+import WindowFrameControls from 'components/window-frame-controls'
+import ContactList from 'components/contact-list'
+import ChatContainer from 'components/chat-container'
+import ChatVersionBadge from 'components/chat-version-badge'
 import remote from 'remote'
 
 const styles = {
@@ -43,6 +43,6 @@ export default class WindowFrame extends React.Component {
         <ChatVersionBadge style={styles.version} />
         <WindowFrameControls style={styles.frameControls} />
       </div>
-    );
+    )
   }
 }
